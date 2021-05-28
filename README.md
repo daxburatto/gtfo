@@ -34,5 +34,3 @@ Plan your next trip at the link below to get away, give your pets a break from y
 
 ## Questions, Comments, Concerns, Issues
 Please feel free to reach out to us on GitHub and create an issue and we will check in to it and get it fixed, or if there is a suggestion for better app functionality let us know too!
-
-![](images/horiesonscreenshot.png)
