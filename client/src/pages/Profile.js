@@ -34,21 +34,12 @@ const Profile = props => {
     );
   }
 
-  // const handleClick = async () => {
-  //   try {
-  //     await addFriend({
-  //       variables: { id: user._id }
-  //     });
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // };
 
   return (
     <div>
       <div className="flex-row mb-3">
         <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+          My Trips
         </h2>
       </div>
 

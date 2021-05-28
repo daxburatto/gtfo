@@ -18,6 +18,11 @@
   box-sizing: border-box;
 }
 
+.uppercase{
+  text-transform: uppercase;
+  text-align: center;
+}
+
 html,
 body {
   min-height: 100%;
