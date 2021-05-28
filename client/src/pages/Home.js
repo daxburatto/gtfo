@@ -5,6 +5,7 @@ import { QUERY_ME, QUERY_USER } from "../utils/queries";
 import { useQuery } from "@apollo/react-hooks";
 import Auth from "../utils/auth";
 import { useParams } from "react-router-dom";
+import dog from "../dog.jpg";
 
 const Home = () => {
   // gets username after logged in
@@ -65,6 +66,14 @@ const Home = () => {
   // html response
   return (
     <main>
+      <div className="flex-row justify-space-between">
+        {!loggedIn && (
+          <div className="col-12 mb-3">
+          <h1 className="uppercase">Login to get started</h1>
+          <img src={dog} alt="dog"/>
+          </div>
+        )}
+      </div>
       <div className="flex-row justify-space-between">
         {loggedIn && (
           <div className="col-12 mb-3">
