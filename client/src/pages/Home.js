@@ -3,6 +3,8 @@ import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import { QUERY_ME, QUERY_USER } from "../utils/queries";
 import { useQuery } from "@apollo/react-hooks";
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_TRIP } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { useParams } from "react-router-dom";
 import dog from "../dog.jpg";
@@ -15,6 +17,7 @@ const Home = () => {
     variables: { username: userParam },
   });
   const user = data?.me || data?.user || {};
+  const [addTrip] = useMutation(ADD_TRIP);
 
   // set value for default form selections
   const [formState, setFormState] = useState({ days: "", budget: "" });
@@ -52,6 +55,13 @@ const Home = () => {
     console.log(formState.budget);
     console.log(selectedValue);
 
+    const numDays = Number(formState.days);
+    const numCost = Number(formState.budget);
+    //const [tripVariables] = { tripDays: formState.days, tripCost: formState.budget, username: user.username };
+    //const tripVariables = { tripDays: 10, tripCost: 15, username:"paden"};
+
+    addTrip({variables: { tripDays: numDays, tripCost: numCost, username:user.username}});
+
     // clear form values
     setFormState({
       days: "",
@@ -59,8 +69,9 @@ const Home = () => {
     });
     setSelectedValue([]);
 
+    
     // takes user to My Trips page
-    //window.location.assign('/profile');
+    window.location.assign('/profile');
   };
 
   // html response
