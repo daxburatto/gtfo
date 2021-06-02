@@ -77,8 +77,8 @@ const Home = () => {
       <div className="flex-row justify-space-between">
         {loggedIn && (
           <div className="col-12 mb-3">
-            <h1 className="uppercase">
-              Welcome {user.username}, lets plan your trip!
+            <h1 className="">
+              {user.username}, lets plan your escape
             </h1>
           </div>
         )}
@@ -86,12 +86,12 @@ const Home = () => {
       <div className="col-12 col-md-6">
         {loggedIn && (
           <div className="card">
-            <h4 className="card-header">Trip Details</h4>
+            <h4 className="card-header">Plan your trip</h4>
             <div className="card-body">
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="How many days do you want to spend in paradise? (Enter an integer)"
+                  placeholder="How many days do you need to get away?"
                   name="days"
                   type="number"
                   id="days"
@@ -100,7 +100,7 @@ const Home = () => {
                 />
                 <input
                   className="form-input"
-                  placeholder="How much do you want to spend? (Enter an integer)"
+                  placeholder="How much can you spend?"
                   name="budget"
                   type="number"
                   id="budget"
@@ -108,7 +108,7 @@ const Home = () => {
                   onChange={handleChange}
                 />
                 <Select
-                  placeholder="What activities are you most interested in?"
+                  placeholder="Have some fun!"
                   options={options}
                   components={animatedComponents}
                   isMulti
@@ -118,7 +118,7 @@ const Home = () => {
                   value={selectedValue}
                   onChange={setSelectedValue}
                 />
-                <button className="btn d-block w-100" type="submit">
+                <button className="btn d-block w-20" type="submit">
                   Submit
                 </button>
               </form>
